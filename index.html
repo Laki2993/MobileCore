@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>core</title>
+    <link rel="icon" href="/img/logo1.ico">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Alumni+Sans:ital,wght@0,100..900;1,100..900&family=Braah+One&family=Inconsolata:wght@200..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <dialog id="Loading_Page">
+        <section class="LoadingContainer" id="LoadingContainer">
+            <img class="PlanetLogo" id="PlanetLogo" src="/img/LogoLading.png" alt="PlanetLogo">
+            <p class="LoadingContainer_p" id="LoadingContainer_p">добро пожаловать в </p>
+            <h1 id="h1">core</h1>
+            <section class="CirkContainer" id="CirkContainer">
+                <div id="Cirk1"></div>
+                <div id="Cirk2"></div>
+            </section>
+        </section>
+    </dialog>
+    <main>
+        <section class="MainContainer">
+            <section class="DateContainer">
+                    <h2 id="LocalTime"></h2>
+            </section>
+            <section class="OptionContainer">
+                <div class="BgFrame" id="BgFrame"></div>
+                <section class="DopContainer">
+                    <section class="TaskDesk">
+                        <article class="MiniFilterTask">
+                            <section class="FilterBoard" id="FilterBoard">
+                                <input type="date" id="FilterDate">
+                                <article class="FilterStatusTask" id="FilterStatusTask">
+                                    <nav class="StatusContainer">
+                                        <button class="FilterStatus" id="Red"></button>    
+                                        <button class="FilterStatus" id="Orange"></button>    
+                                        <button class="FilterStatus" id="Green"></button>    
+                                    </nav>
+                                </article>
+                            </section>
+                            <button id="MiniFilter"></button>
+                        </article>
+                        <article class="TasksContainer">
+
+                        </article>
+                    </section>
+                    <section class="OptionsBtns">
+                        <button class="btnOption" id="NewTask">новая задача <img src="/img/plus.svg" alt=""></button>
+                        <button class="btnOption" id="TasksHistory">история задач <img src="/img/Paper.svg" alt=""></button>
+                        <button class="btnOption" id="AllTasks">все задачи <img src="/img/AllTask.svg" alt=""></button>
+                    </section>
+
+                </section>
+
+
+            </section>
+            <section class="NavigateContainer"></section>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
