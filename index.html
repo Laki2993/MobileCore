@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Abel&family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Alumni+Sans:ital,wght@0,100..900;1,100..900&family=Braah+One&family=Inconsolata:wght@200..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">    <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <dialog id="Loading_Page">
@@ -22,47 +23,126 @@
             </section>
         </section>
     </dialog>
-    <main>
-        <section class="MainContainer">
-            <section class="DateContainer">
-                    <h2 id="LocalTime"></h2>
-            </section>
-            <section class="OptionContainer">
-                <div class="BgFrame" id="BgFrame"></div>
-                <section class="DopContainer">
-                    <section class="TaskDesk">
-                        <article class="MiniFilterTask">
-                            <section class="FilterBoard" id="FilterBoard">
-                                <input type="date" id="FilterDate">
-                                <article class="FilterStatusTask" id="FilterStatusTask">
-                                    <nav class="StatusContainer">
-                                        <button class="FilterStatus" id="Red"></button>    
-                                        <button class="FilterStatus" id="Orange"></button>    
-                                        <button class="FilterStatus" id="Green"></button>    
-                                    </nav>
-                                </article>
-                            </section>
-                            <button id="MiniFilter"></button>
-                        </article>
-                        <article class="TasksContainer">
+    <main id="main">
+        <section class="Line" id="Line">
 
-                        </article>
-                    </section>
-                    <section class="OptionsBtns">
-                        <button class="btnOption" id="NewTask">новая задача <img src="/img/plus.svg" alt=""></button>
-                        <button class="btnOption" id="TasksHistory">история задач <img src="/img/Paper.svg" alt=""></button>
-                        <button class="btnOption" id="AllTasks">все задачи <img src="/img/AllTask.svg" alt=""></button>
-                    </section>
-
+            <section class="MainContainer">
+                <section class="DateContainer">
+                        <h2 id="LocalTime"></h2>
+                        <h2 id="DayMon"></h2>
                 </section>
-
-
+                <section class="OptionContainer">
+                    <div class="BgFrame" id="BgFrame"></div>
+                    <section class="DopContainer">
+                        <section class="TaskDesk">
+                            <article class="MiniFilterTask">
+                                <section class="FilterBoard" id="FilterBoard">
+                                    <article class="DataNow">
+                                        <p class="Data" id="Date"></p>
+                                        <div class="Default" id="cirk"></div>
+                                        <button class="btnSaveFilterSave" id="btnSaveFilter" ></button>
+                                    </article>
+                                    <article class="DataFilter">
+                                        <section class="dataContainer">
+                                            <p class="dataText">дата</p>
+                                            <input type="date" id="inputData">
+                                        </section>
+                                        <section class="dataContainer">
+                                            <p class="dataText">статус</p>
+                                            <button class="btnStatus" id="green"></button>
+                                            <button class="btnStatus" id="orange"></button>
+                                            <button class="btnStatus" id="red"></button>
+                                        </section>
+                                    </article>
+                                </section>
+                                <button id="MiniFilter"></button>
+                            </article>
+                            <article class="TasksContainer" id="TasksContainer">
+    
+                            </article>
+                        </section>
+                        <section class="OptionsBtns">
+                            <button class="btnOption" id="NewTask">новая задача <img src="/img/plus.svg" alt=""></button>
+                            <button class="btnOption" id="TasksHistory">история задач <img src="/img/Paper.svg" alt=""></button>
+                            <button class="btnOption" id="AllTasks">все задачи <img src="/img/AllTask.svg" alt=""></button>
+                        </section>
+    
+                    </section>
+    
+    
+                </section>
+                <section class="NavigateContainer"></section>
             </section>
-            <section class="NavigateContainer"></section>
+            <section class="createTask">
+                <input type="text" id="taskName" maxlength="50" placeholder="укажите название задачи">
+                <textarea name="textDesc" id="textDesc" maxlength="400" placeholder="опишите свою задачу" minlength="1"></textarea>
+                <article class="createFilter">
+                    <input type="date" id="createData">
+                    <article class="createContainer">
+                        <div class="createPriority Hard" id="createHard"></div>
+                        <div class="createPriority Normal" id="createNormak"></div>
+                        <div class="createPriority easy" id="createEasy"></div>
+                        <p class="createText" id="createText">приоритет</p>
+                    </article>
+                    <button id="createBtn">создать</button>
+                </article>
+            </section>
+            
+            <section class="settingsApp">
+                <article class="settingPage">
+                    <p class="settingTitle">интерфейс</p>
+                    <img src="/img/IconSetting.svg" alt="iconPhone" class="iconSetting">
+                </article>
+                <section class="settingFont">
+                    <article class="settingContainer">
+                        <p>шрифт</p>
+                        <section><p>Alegreya Sans</p></section>
+                    </article>
+                    <article class="settingContainer">
+                        <p>размер</p>
+                        <section><p>Alegreya Sans</p></section>
+                    </article>
+                </section>
+                <section class="settingThems">
+                    <section class="settingThemsPage">
+                        <p class="settingTitleText">тема</p>
+                        <section class="settingContainerThems">
+                            <article class="settingThem">
+                                <img src="/img/Them1.svg" alt="" srcset="">
+                                <input type="radio">
+                            </article>
+                            <article class="settingThem">
+                                <img src="/img/Them2.svg" alt="" srcset="">
+                                <input type="radio">
+                            </article>
+                        </section>
+                    </section>
+                    <section class="settingThemsIcon">
+                        <p class="settingTitleText">значок</p>
+                        <section class="settingContainerIcon">
+                            <img class="imgIconApp" src="/img/WhiteThemDefault.svg" alt="">
+                            <img class="imgIconApp" src="/img/WhiteAlternative.svg" alt="">
+                            <img class="imgIconApp" src="/img/DarkStars.svg" alt="">
+                            <img class="imgIconApp" src="/img/DarkThemDefault.svg" alt="">
+                            <img class="imgIconApp" src="/img/DarkAlternative.svg" alt="">
+                            <img class="imgIconApp" src="/img/DarkStarMini.svg" alt="">
+                        </section>
+                    </section>
+                </section>
+            </section>
         </section>
     </main>
     <footer>
-
+        <nav class="TabBar">
+            <button class="TabBarBtn" id="Core"></button>
+            <button class="TabBarBtn" id="Main"></button>
+            <button class="TabBarBtn" id="Setting"></button>
+        </nav>
+        <section class="AboutConatainer">
+            <h2 class="FooDesk">by Junior</h2>
+            <h2 class="FooDesk">vladislove650@gmail.com</h2>
+            <h2 class="FooDesk">v0.1</h2>
+        </section>
     </footer>
 
     <script src="script.js"></script>

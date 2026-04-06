@@ -5,22 +5,104 @@
     }
 
     body{
-        background-color: #120B31;
+        background-color: #120B31;            
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; 
     }
 
     main{
+        left: 0vw;
+        flex: 1; 
         width: 100%;
-        height: 110vw;
         background-color: rgba(255, 0, 0, 0);
         display: flex;
-        justify-content: center;
+        justify-items: center;
         align-items: center;
+        overflow: hidden;
+    }
+
+    .Line{
+        left: 0vw;
+        width: 300%;
+        transition: 0.3s;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        gap: 10vw;
+        padding: 8.5vw 0vw 0vw 8.5vw;
     }
 
     footer{
+        width: 91%;
+        height: 40vw;
+        background: linear-gradient(#120b3177 20%, #161616 80%);
+        padding: 20px;
+        display: grid;
+        align-content: space-between;
+        justify-items: center;
+    }
+
+    .TabBar{
+        width: 40vw;
+        height: 8vw;
+        background-color: #25185D;
+        border-radius: 5vw;
+        display: flex;
+        justify-content: center;
+        gap: 5vw;
+        align-items: center;
+    }
+
+    .TabBarBtn{
+        width:6vw;
+        height:6vw;
+        background-color: rgba(255, 0, 0, 0);
+        border-radius: 20vw;
+        border: none;
+        outline: none;
+        transition: 0.1s;
+    }
+    .TabBarBtn:active{
+        width:6vw;
+        height:6vw;
+        border-radius: 20vw;
+        border: none;
+        outline: none;
+        transition: 0.1s;
+        background-color: #8368f844;
+    }
+
+
+
+    #Core{
+        background-image: url(/img/AboutCore.svg);
+        background-size: cover;
+    }
+
+    #Main{
+        background-image: url(/img/MainPage.svg);
+        background-size: cover;
+    }
+
+    #Setting{
+        background-image: url(/img/Setting.svg);
+        background-size: cover;
+    }
+
+    .AboutConatainer{
         width: 100%;
-        height: 35vw;
-        background: linear-gradient(#161616d8 60%, #161616 40%);
+        height: fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+    }
+
+    .FooDesk{
+        font-family: Alumni Sans;
+        font-size: 3vw;
+        font-weight: lighter;
+        color: #5B5B5B;
     }
 
    #Loading_Page{
@@ -33,6 +115,7 @@
     border: none;
     overflow: hidden;
     transition: 1s;
+
    }
 
     .LoadingContainer{
@@ -144,11 +227,11 @@
     }
 
     .DateContainer{
-        width: 83%;
+        width: 100%;
         height: 10vw;
         display: flex;
-        justify-content: start;
-        align-items: center;
+        justify-content: space-between;
+        align-items: end;
         background-color: rgba(255, 0, 0, 0);
     }
 
@@ -159,15 +242,58 @@
         color: white;
     }
 
+    .Date{
+        display: flex;
+        align-items: end;
+    }
+
+    #DayMon{
+        color: white;
+        font-family: 'Alegreya Sans', sans-serif;        
+        font-size: 3vw;
+        font-weight:100;
+        padding: 6px;
+    }
+
     .MainContainer{
-        width: 100%;
+        width: 82vw;
         display: grid;
         justify-content: center;
     }
 
+    .createTask{
+        width: 82vw;
+        height: 100vw;
+        display: grid;
+        grid-template-rows: 12vw 41vw;
+        align-items: start;
+        justify-content: start; 
+    }
+
+    #taskName{
+        width: 99%;
+        height: 8vw;
+        outline: none;
+        border-radius: 1vw;
+        border: none;
+        outline: none;
+        padding-left: 1vw;
+        font-size: 3.5vw;
+    }
+
+    #textDesc{
+        min-width: 79.8vw;
+        max-width: 79.8vw;
+        min-height: 35vw;
+        max-height: 35vw;
+        outline: none;
+        padding: 1.5vw;
+        border-radius: 1vw;
+    }
+
     .BgFrame{
         width: 40vw;
-        height: 88vw;
+        height: 87.3vw;
         background-image: url(/img/BgFrame.png);
         background-size: cover;
         
@@ -187,8 +313,10 @@
         border-radius: 4px;
         background-color: #2FB9D9;
         display: grid;
-        justify-content: center;
-        padding: 5px 0px 0px 0px;
+        gap: 2vw;
+        align-content: start;
+        justify-items: space-around;
+        padding: 1vw 2vw 0vw 1vw;
     }
 
     .OptionsBtns{
@@ -206,8 +334,9 @@
         width: 40vw;
         height: 100%;
         display: flex;
+        gap: 2vw;
         flex-wrap: wrap;
-        align-content:space-between;
+        align-content:start;
         
     }
 
@@ -241,24 +370,31 @@
         width: 5vw;
         height: 5vw;
         background-image: url(/img/Filter.svg);
-        background-size: cover;
+        background-size: contain;
         background-color: #120b3100;
         border:none;
         outline: none;
     }
 
-    .MiniFilterTask{
+    .MiniFilterTask{ flex: 1;
         width: 100%;
+        height: fit-content;
+        align-content: start;
         display: flex;
         justify-content: end;
     }
 
     .TasksContainer{
+        height: 53vw;
         display: grid;
+        grid-auto-rows: 5vw;
+        gap: 2vw;
+        overflow-y: scroll;
     }
 
     .FilterBoard{
         display: flex;
+        flex-direction: column;
         width: 0vw;
         height: 5vw;
         background-color: #fff;
@@ -267,53 +403,355 @@
         overflow: hidden ;
     }
 
-    #FilterDate{
-        width: 15vw;
-        font-size: 3vw;
-        background-color: #4F8A98;
-        border: none;
-        outline: none;
-        color: white;
-        font-family: Alegreya Sans;
-    }
-
-    .FilterStatusTask{
-        width: 1vw;
+    .DataNow{
+        width: 100%;
         height: 5vw;
         background-color: #0B4C5B;
-        transition: 0.3s;
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        overflow: hidden;
-    }
-
-    .StatusContainer{
-        width:18vw;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        gap: 8px;
-        padding: 0px 5px 0px 5px;
+        gap: 1vw;
+        padding-left: 0.5vw;
+        padding-right: 2vw;
     }
 
-    .FilterStatus{
+    .DataFilter{
+        width: 100%;
+        height: 50%;
+        background-color: #4F8A98;
+    }
+
+    .Default{
         width: 2vw;
         height: 2vw;
-        border-radius: 15px;
+        border-radius: 10vw;
+        background-color: rgb(139, 139, 139);
+        box-shadow: 0px 0px 1vw rgb(189, 189, 189);
+    }
+
+    .easy{
+        width: 2vw;
+        height: 2vw;
+        border-radius: 10vw;
+        background-color: #99FFA1;
+        box-shadow: 0px 0px 1vw #68EE72;
+    }
+
+    .Normal{
+        width: 2vw;
+        height: 2vw;
+        border-radius: 10vw;
+        background-color: #FFA136;
+        box-shadow: 0px 0px 1vw #ffe4c4;
+    }
+
+    .Hard{
+        width: 2vw;
+        height: 2vw;
+        border-radius: 10vw;
+        background-color: #ff6464;
+        box-shadow: 0px 0px 1vw #ff9d9d;
+    }
+
+    .btnSaveFilterSave{
+        width: 3vw;
+        height: 3vw;
+        background-color: green;
+        border: none;
+        border-radius: 0.5vw;
+        background-image: url(/img/Save.svg);
+        background-size: contain;
+    }
+    .btnSaveFilterDel{
+        width: 3vw;
+        height: 3vw;
+        background-color: red;
+        border: none;
+        border-radius: 0.5vw;
+        background-image: url(/img/Edit.svg);
+        background-size: contain;
+    }
+
+
+
+    .Data{
+        font-size: 4vw;
+        font-family: 'Alegreya Sans';
+        font-weight: 100;
+        color: white;
+    }
+
+    .dataContainer{
+        display: flex;
+        align-items: center;
+    }
+
+    .dataText{
+        font-family: 'Alegreya Sans';
+        font-weight: 400;
+        font-size: 3vw;
+        color: white;
+        background-color: #4F8A98;
+        height: 4vw;
+        width: 10vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    #inputData{
+        width: 20vw;
+        height: 4vw;
+        border-radius: 0vw;
+        border: none;
+        font-size: 2vw;
+        display: flex;
+        outline: none;
+        justify-content: center;
+    }
+
+    .btnStatus{
+        width: 6.7vw;
+        height: 4vw;
+        background: red;
         border: none;
         outline: none;
     }
-
-    #Red{
-        background-color: #A73B3B;
+    
+    #green{
+        background-color: #68EE72;
     }
 
-    #Orange{
-        background-color: #F4A449;
+    #orange{
+        background-color: #FFA136;
     }
 
-    #Green{
-        background-color: #36793B;
+    #red{
+        background-color: #DF3535;
     }
+
+    .createFilter{
+        width: 100%;
+        display: grid;
+        grid-template-rows: 4vw 4vw 20vw;
+        justify-items: end;
+        align-items: center;
+        gap: 4vw;
+    }
+
+    .createPriority{
+        width: 2vw;
+        height: 2vw;
+        border-radius: 10vw;
+    }
+
+    .createContainer{
+        display: flex;
+        align-items: center;
+        gap: 4vw;
+    }
+
+    .createText{
+        font-family:'Arsenal SC';
+        font-weight: 100;
+        font-size: 4vw;
+        color: white;
+        background-color: #747474;
+        padding: 0vw 1vw 0vw 1vw;
+        user-select: none;
+        border-radius: 0.5vw;
+    }
+
+    .createTextHard{
+        font-family:'Arsenal SC';
+        font-weight: 100;
+        font-size: 4vw;
+        color: white;
+        background-color: #ff6464;
+        padding: 0vw 1vw 0vw 1vw;
+        user-select: none;
+        border-radius: 0.5vw;
+    }
+
+    .createTextNormal{
+        font-family:'Arsenal SC';
+        font-weight: 100;
+        font-size: 4vw;
+        color: white;
+        background-color: #FFA136;
+        padding: 0vw 1vw 0vw 1vw;
+        user-select: none;
+        border-radius: 0.5vw;
+    }
+
+    .createTextEasy{
+        font-family:'Arsenal SC';
+        font-weight: 100;
+        font-size: 4vw;
+        color: white;
+        background-color: #47c252;
+        padding: 0vw 1vw 0vw 1vw;
+        border-radius: 0.5vw;
+        user-select: none;
+    }
+
+    #createBtn{
+        width:40vw;
+        height:12vw;
+        font-family: 'Alegreya Sans';
+        font-weight: normal;
+        color: white;
+        background-color: #37CD2F;
+        font-size: 8vw;
+        border: none;
+        border-radius: 1vw;
+        transition: 0.1s;
+    }
+
+    #createBtn:active{
+        width:40vw;
+        height:12vw;
+        font-family: 'Alegreya Sans';
+        font-weight: normal;
+        color: white;
+        background-color: #3ce233c2;
+        font-size: 8vw;
+        border: none;
+        border-radius: 1vw;
+        transition: 0.1s;
+        transform: scale(0.95);
+    }
+
+    #createData{
+        font-family: 'Alumni Sans';
+        border: none;
+        outline: none;
+        border-radius: 0.5vw;
+        padding: 1vw;
+    }
+
+    .taskContainer{
+        width: 37vw;
+        height: 5vw;
+        background: white;
+        border-radius: 0.5vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .taskTitle{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 2vw;
+    }
+
+    .taskDesc{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 2vw;
+    }
+
+    .taskData{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 2vw;
+    }
+
+    .Indicator{
+        width: 2vw;
+        height: 2vw;
+        border-radius: 99vw;
+    }
+
+    .settingsApp{
+        width: 82vw;
+        height: 100vw;
+        display: grid;
+        align-items: start;
+        justify-content: center; 
+        background-color: #414141;
+        border-radius: 1vw;
+        padding: 2vw 0vw 2vw 0vw;
+    }
+
+    .settingPage{
+        width: 75vw;
+        height: 40px;
+        display: flex;
+        gap: 0.5vw;
+        align-items: end;
+        border-bottom: 0.5vw solid #575757;
+        padding: 0vw 0vw 0.5vw 0vw;
+    }
+
+    .iconSetting{
+        width: 4vw;
+        height: 4vw;
+    }
+
+    .settingTitle{
+        font-family: 'Alegreya Sans';
+        font-weight: bold;
+        color: white;
+    }
+
+    .settingFont{
+        width: 72vw;
+        height: 18vw;
+        background-color: #494949;
+        border-radius: 0.5vw;
+        display: grid;
+        align-content: space-around;
+        padding: 2vw;
+    }
+
+    .settingContainer{
+        display: flex;
+    }
+
+    .settingThems{
+        width: 72vw;
+        height: 24vw;
+        background-color: #494949;
+        border-radius: 0.5vw;
+        display: flex;
+        justify-content: space-around;
+        gap: 1vw;
+        align-content: center;
+        padding: 2vw;
+    }
+
+    .settingThem{
+        display: grid;
+        gap: 0.5vw;
+    }
+
+    .settingContainerThems{
+        display: flex;
+        gap: 2vw;
+    }
+
+    .settingTitleText{
+        font-family: 'Alegreya Sans';
+        font-weight: lighter;
+        font-size: 4vw;
+        color: white;
+    }
+
+    .settingContainerIcon{
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: 8vw 8vw 8vw;
+        grid-template-rows: 8vw 8vw 8vw;
+        gap: 0.5vw;
+    }
+
+
+
+
+
+
+
+
+
+
+
 }
